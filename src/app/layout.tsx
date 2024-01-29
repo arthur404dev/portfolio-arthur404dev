@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${jetbrainsMono.variable} ${poppins.variable} ${raleway.variable} theme-latte bg-gradient-to-b from-theme-base to-theme-crust text-theme-text dark:theme-mocha`}
+        className={`${jetbrainsMono.variable} ${poppins.variable} ${raleway.variable} theme-latte bg-gradient-to-b from-theme-base via-theme-mantle to-theme-crust text-theme-text dark:theme-mocha`}
       >
         <ThemeProvider
           attribute="class"
