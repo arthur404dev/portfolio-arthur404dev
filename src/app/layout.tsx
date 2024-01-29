@@ -1,4 +1,4 @@
-import { ThemeProvider } from "@/components/theme-provider";
+import { NavBar, ThemeProvider } from "@/components";
 import type { Metadata } from "next";
 import { JetBrains_Mono, Poppins, Raleway } from "next/font/google";
 import "./globals.css";
@@ -41,6 +41,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <NavBar />
           {children}
         </ThemeProvider>
       </body>
