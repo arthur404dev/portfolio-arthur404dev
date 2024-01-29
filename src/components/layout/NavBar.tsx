@@ -15,7 +15,7 @@ const NavBar = ({}: Props) => {
 
   return (
     <motion.nav
-      className="font-jetbrains fixed bottom-0 top-0 z-40 mt-auto flex h-max w-full flex-col items-center gap-y-4 lg:right-[2%] lg:h-screen lg:w-14 lg:max-w-md lg:justify-center"
+      className="font-jetbrains fixed bottom-0 top-0 z-40 mt-auto flex h-max w-full flex-col items-center gap-y-4 lg:right-[2%] lg:h-screen lg:w-16 lg:max-w-md lg:justify-center"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
     >
