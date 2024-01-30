@@ -34,7 +34,7 @@ export const navigation = [
     hash: "#contact",
     icon: <HiEnvelope />,
   },
-];
+] as const;
 
 export const socials = [
   {
@@ -62,4 +62,4 @@ export const socials = [
     url: "https://l.arthur404.dev/discord",
     icon: <SiDiscord />,
   },
-];
+] as const;
