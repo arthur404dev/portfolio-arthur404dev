@@ -50,12 +50,12 @@ const Hero = ({}: Props) => {
         >
           <div className="flex flex-col gap-2 text-center lg:gap-4 lg:text-left xl:gap-6">
             <h1 className="text-wrap font-raleway text-xl text-theme-text md:text-2xl lg:text-3xl xl:text-4xl">
-              Hi! I'm{" "}
+              {`Hi! I'm `}
               <span className="font-bold text-theme-lavender">Arthur</span> and
-              I like to create stuff.
+              {`I like to create stuff.`}
             </h1>
             <h2 className="text-sm font-light text-theme-subtext0 md:text-base lg:text-xl xl:text-2xl">
-              I've Been a Software Developer for over 15 years!
+              {`I've Been a Software Developer for over 15 years!`}
             </h2>
           </div>
           <div className="flex items-center justify-center gap-8">
