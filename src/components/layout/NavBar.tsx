@@ -1,5 +1,7 @@
 "use client";
+import { useActiveSection } from "@/context";
 import { navigation } from "@/lib/data";
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -10,6 +12,7 @@ type Props = {};
 
 const NavBar = ({}: Props) => {
   const [mounted, setMounted] = useState(false);
+  const { activeSection, setActiveSection } = useActiveSection();
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
@@ -28,13 +31,33 @@ const NavBar = ({}: Props) => {
           <Link
             key={hash}
             href={hash}
-            className="group relative flex h-9 w-9 items-center justify-center rounded-full bg-transparent text-theme-text outline-none hover:border-2 hover:border-theme-lavender hover:bg-theme-surface0 hover:text-theme-lavender focus:text-theme-lavender focus:ring-1 focus:ring-theme-lavender focus:ring-offset-0"
+            onClick={() => setActiveSection(name)}
+            className={cn(
+              "group relative flex h-9 w-9 items-center justify-center rounded-full bg-transparent text-theme-text outline-none hover:border-2 hover:border-theme-lavender hover:bg-theme-surface0 hover:text-theme-lavender",
+              {
+                "text-theme-mauve": activeSection === name,
+              },
+            )}
           >
             {icon}
+            {activeSection === name && (
+              <motion.div
+                className="absolute inset-0 -z-10"
+                layoutId="acitveSection"
+                transition={{
+                  type: "spring",
+                  stiffness: 500,
+                  damping: 50,
+                }}
+              >
+                <div className="h-full w-full rounded-full border-2 border-theme-mauve bg-theme-surface0"></div>
+                <div className="absolute inset-0 -z-10 h-full w-full animate-spin rounded-full bg-gradient-to-br from-theme-mauve to-theme-blue blur-sm"></div>
+              </motion.div>
+            )}
             <NavLabel label={name} />
           </Link>
         ))}
-        <ThemeSwitcher className="group relative flex h-9 w-9 items-center justify-center rounded-full bg-transparent text-theme-text outline-none hover:border-2 hover:border-theme-lavender hover:bg-theme-surface0 hover:text-theme-lavender focus:text-theme-lavender focus:ring-1 focus:ring-theme-lavender focus:ring-offset-0">
+        <ThemeSwitcher className="group relative flex h-9 w-9 items-center justify-center rounded-full bg-transparent text-theme-text outline-none hover:border-2 hover:border-theme-lavender hover:bg-theme-surface0 hover:text-theme-lavender">
           <NavLabel label={`Toggle Theme`} />
         </ThemeSwitcher>
       </div>

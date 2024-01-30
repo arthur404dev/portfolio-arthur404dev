@@ -1,15 +1,24 @@
 "use client";
-import { motion } from "framer-motion";
+import { useActiveSection } from "@/context";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
 
 type Props = {};
 
 const Hero = ({}: Props) => {
   const { push } = useRouter();
-  const handleContact = () => push("/#contact");
+  const { setActiveSection } = useActiveSection();
+  const homeRef = useRef(null);
+  const isInView = useInView(homeRef, { amount: "some" });
+
+  useEffect(() => {
+    if (isInView) setActiveSection("Home");
+  }, [isInView, setActiveSection]);
+
   return (
-    <section id="home">
+    <section id="home" ref={homeRef} className=" scroll-mt-[100rem]">
       <div className="relative flex w-screen flex-col items-center justify-center gap-8 lg:max-w-7xl lg:flex-row lg:px-12 xl:px-0">
         <motion.div
           initial={{ opacity: 0 }}
@@ -51,7 +60,7 @@ const Hero = ({}: Props) => {
           </div>
           <div className="flex items-center justify-center gap-8">
             <button
-              onClick={handleContact}
+              onClick={() => push("/#contact")}
               className="text-md flex h-10 items-center gap-2 rounded-md bg-theme-lavender px-3 font-bold text-theme-base hover:bg-theme-mauve lg:h-12 lg:text-xl xl:h-14 xl:px-8"
             >
               <span>Contact Me!</span>

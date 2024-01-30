@@ -1,4 +1,5 @@
 import { Header, NavBar, ThemeProvider } from "@/components";
+import { ActiveSectionContextProvider } from "@/context";
 import type { Metadata } from "next";
 import { JetBrains_Mono, Poppins, Raleway } from "next/font/google";
 import "./globals.css";
@@ -31,19 +32,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="!scroll-smooth">
       <body
         className={`${jetbrainsMono.variable} ${poppins.variable} ${raleway.variable} theme-latte bg-gradient-to-b from-theme-base via-theme-mantle to-theme-crust text-theme-text dark:theme-mocha`}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
           disableTransitionOnChange
         >
-          <Header />
-          <NavBar />
-          {children}
+          <ActiveSectionContextProvider>
+            <Header />
+            <NavBar />
+            {children}
+          </ActiveSectionContextProvider>
         </ThemeProvider>
       </body>
     </html>
