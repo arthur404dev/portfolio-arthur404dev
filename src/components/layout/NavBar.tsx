@@ -15,9 +15,13 @@ const NavBar = ({}: Props) => {
 
   return (
     <motion.nav
-      className="font-jetbrains fixed bottom-0 top-0 z-40 mt-auto flex h-max w-full flex-col items-center gap-y-4 lg:right-[2%] lg:h-screen lg:w-16 lg:max-w-md lg:justify-center"
+      className="fixed bottom-0 top-0 z-40 mt-auto flex h-max w-full flex-col items-center gap-y-4 font-jetbrains lg:right-[2%] lg:h-screen lg:w-16 lg:max-w-md lg:justify-center"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
+      transition={{
+        ease: "easeInOut",
+        duration: 0.5,
+      }}
     >
       <div className="shadow-xs flex h-[80px] w-full items-center justify-between gap-x-4 gap-y-10 bg-gradient-to-b from-theme-text/5 to-theme-crust/5 px-4 py-8 text-2xl shadow-theme-crust backdrop-blur-md md:px-40 lg:h-max lg:flex-col lg:justify-center lg:rounded-full lg:px-0 lg:text-xl">
         {navigation.map(({ name, hash, icon }) => (
