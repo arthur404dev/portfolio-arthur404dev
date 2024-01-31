@@ -1,4 +1,5 @@
 import catppuccin from "@catppuccin/tailwindcss";
+import typography from '@tailwindcss/typography';
 import type { Config } from "tailwindcss";
 import animatePlugin from "tailwindcss-animate";
 
@@ -41,7 +42,7 @@ const config = {
       },
     },
   },
-  plugins: [animatePlugin, catppuccin({ prefix: "theme" })],
+  plugins: [animatePlugin,typography, catppuccin({ prefix: "theme" })],
 } satisfies Config;
 
 export default config;

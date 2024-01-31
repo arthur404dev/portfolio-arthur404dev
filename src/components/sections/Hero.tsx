@@ -19,7 +19,7 @@ const Hero = ({}: Props) => {
 
   return (
     <section id="home" ref={homeRef} className=" scroll-mt-[100rem]">
-      <div className="relative flex w-screen flex-col items-center justify-center gap-8 lg:max-w-7xl lg:flex-row lg:px-12 xl:px-0">
+      <div className="relative flex w-screen flex-col items-center justify-center gap-8 font-raleway lg:max-w-7xl lg:flex-row lg:px-12 xl:px-0">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -48,15 +48,19 @@ const Hero = ({}: Props) => {
           }}
           className="container flex flex-col items-center justify-center gap-8 py-8 lg:gap-12 xl:gap-14"
         >
-          <div className="flex flex-col gap-2 text-center lg:gap-4 lg:text-left xl:gap-6">
-            <h1 className="text-wrap font-raleway text-xl text-theme-text md:text-2xl lg:text-3xl xl:text-4xl">
-              {`Hi! I'm `}
-              <span className="font-bold text-theme-lavender">Arthur</span> and
-              {`I like to create stuff.`}
-            </h1>
-            <h2 className="text-sm font-light text-theme-subtext0 md:text-base lg:text-xl xl:text-2xl">
-              {`I've Been a Software Developer for over 15 years!`}
+          <div className="prose prose-sm flex max-w-72 flex-col break-normal text-center lg:gap-2 lg:text-left xl:max-w-md">
+            <h2 className="text-wrap text-xl font-bold text-theme-text md:text-2xl lg:text-3xl xl:text-4xl">
+              Hi! I'm <span className="font-bold text-theme-mauve">Arthur</span>
             </h2>
+            <h3 className="text-md font-medium text-theme-subtext1 md:text-base lg:text-xl xl:text-2xl">
+              Crafting <span className="font-bold">cool</span> software and{" "}
+              <span className="font-bold">innovative</span> solutions has been
+              my passion for more than{" "}
+              <span className="text-theme-lavender">15 years</span>...
+            </h3>
+            <h4 className="text-sm font-light italic text-theme-overlay2 lg:text-lg xl:text-xl">
+              and I'm loving every minute of it!
+            </h4>
           </div>
           <div className="flex items-center justify-center gap-8">
             <button
