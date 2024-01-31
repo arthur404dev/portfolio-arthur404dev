@@ -12,7 +12,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 const fadeInAnimationVariants = {
   initial: {
     opacity: 0,
-    y: -15,
+    y: -30,
   },
   animate: (index: number) => ({
     opacity: 1,
