@@ -17,9 +17,9 @@ const Header = ({}: Props) => {
       }}
     >
       <div className="container mx-auto">
-        <div className="flex flex-col items-center justify-between gap-y-6 py-8 lg:flex-row">
+        <div className="flex flex-col items-center justify-between gap-y-2 py-4 sm:py-5 md:py-6 lg:flex-row lg:py-8">
           <Link href="/">
-            <h1 className="font-jetbrains text-3xl font-black uppercase tracking-tight text-theme-text">
+            <h1 className="font-jetbrains text-xl font-black uppercase tracking-tight text-theme-text sm:text-2xl md:text-3xl">
               &lt;Arthur
               <span className="font-thin lowercase text-theme-lavender">
                 404dev
