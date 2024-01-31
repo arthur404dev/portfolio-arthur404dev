@@ -1,15 +1,25 @@
+"use client";
+import { motion } from "framer-motion";
 type Props = {
   label: string;
 };
 
 const NavLabel = ({ label }: Props) => {
   return (
-    <>
-      <div className="absolute -z-10 h-9 w-9 animate-spin rounded-full from-theme-mauve to-theme-blue blur-sm group-hover:bg-gradient-to-b "></div>
-      <div className="absolute right-[50%] -z-20 hidden h-9 w-auto items-center text-nowrap rounded-l-full bg-gradient-to-b from-theme-mauve via-theme-lavender to-theme-blue pl-6 pr-8 text-lg font-bold capitalize text-theme-crust shadow-lg shadow-theme-crust animate-in zoom-in lg:group-hover:inline-flex">
+    <motion.div
+      className="absolute right-[180%] -z-20 hidden h-9 w-auto items-center justify-center text-nowrap rounded-full bg-theme-lavender pl-6 pr-8 text-lg font-bold capitalize text-theme-crust shadow-lg shadow-black/40 lg:flex"
+      initial={{ opacity: 0, right: "50%" }}
+      animate={{ opacity: 1, right: "180%" }}
+      transition={{ duration: 0.15 }}
+    >
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.1, duration: 0.15 }}
+      >
         {label}
-      </div>
-    </>
+      </motion.span>
+    </motion.div>
   );
 };
 

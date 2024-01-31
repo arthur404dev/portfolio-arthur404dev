@@ -12,13 +12,15 @@ type Props = {};
 
 const NavBar = ({}: Props) => {
   const [mounted, setMounted] = useState(false);
+  const [hovered, setHovered] = useState("");
   const { activeSection, setActiveSection } = useActiveSection();
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
+  console.log(hovered);
 
   return (
     <motion.nav
-      className="fixed bottom-0 top-0 z-40 mt-auto flex h-max w-full flex-col items-center gap-y-4 font-jetbrains lg:right-[2%] lg:h-screen lg:w-16 lg:max-w-md lg:justify-center"
+      className="fixed bottom-0 top-0 z-40 mt-auto flex h-max w-full flex-col items-center gap-y-4 font-raleway lg:right-[2%] lg:h-screen lg:w-16 lg:max-w-md lg:justify-center"
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -32,8 +34,10 @@ const NavBar = ({}: Props) => {
             key={hash}
             href={hash}
             onClick={() => setActiveSection(name)}
+            onMouseOver={() => setHovered(hash)}
+            onMouseOut={() => setHovered("")}
             className={cn(
-              "group relative flex h-9 w-9 items-center justify-center rounded-full bg-transparent text-theme-text outline-none hover:border-2 hover:border-theme-lavender hover:bg-theme-surface0 hover:text-theme-lavender",
+              "group relative flex h-9 w-9 items-center justify-center rounded-full bg-transparent text-theme-text outline-none hover:text-theme-lavender",
               {
                 "text-theme-mauve": activeSection === name,
               },
@@ -54,12 +58,17 @@ const NavBar = ({}: Props) => {
                 <div className="absolute inset-0 -z-10 h-full w-full animate-spin rounded-full bg-gradient-to-br from-theme-mauve to-theme-blue blur-sm"></div>
               </motion.div>
             )}
-            <NavLabel label={name} />
+            {hovered === hash && <NavLabel label={name} />}
           </Link>
         ))}
-        <ThemeSwitcher className="group relative flex h-9 w-9 items-center justify-center rounded-full bg-transparent text-theme-text outline-none hover:border-2 hover:border-theme-lavender hover:bg-theme-surface0 hover:text-theme-lavender">
-          <NavLabel label={`Toggle Theme`} />
-        </ThemeSwitcher>
+        <div
+          onMouseOver={() => setHovered("theme")}
+          onMouseOut={() => setHovered("")}
+        >
+          <ThemeSwitcher className="relative flex h-9 w-9 items-center justify-center rounded-full bg-transparent text-theme-text outline-none hover:text-theme-lavender">
+            {hovered === "theme" && <NavLabel label={"Theme"} />}
+          </ThemeSwitcher>
+        </div>
       </div>
     </motion.nav>
   );

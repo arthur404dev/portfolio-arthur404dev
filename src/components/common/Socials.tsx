@@ -9,7 +9,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   containerClassName?: string | undefined;
 }
 
-const fadeInAnimationVariants = {
+const socialAnimationVariants = {
   initial: {
     opacity: 0,
     y: -30,
@@ -32,7 +32,7 @@ const Socials = ({ className, containerClassName, socialClassName }: Props) => {
             key={name}
             className={socialClassName}
             custom={index}
-            variants={fadeInAnimationVariants}
+            variants={socialAnimationVariants}
             initial={"initial"}
             animate={"animate"}
           >
