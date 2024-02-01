@@ -46,9 +46,9 @@ const Hero = ({}: Props) => {
             ease: "easeInOut",
             duration: 1.5,
           }}
-          className="container flex flex-col items-center justify-center gap-8 py-4 lg:gap-12 xl:gap-14"
+          className="container flex flex-col items-center justify-center gap-16 py-4 lg:gap-20 xl:gap-24"
         >
-          <div className="prose prose-sm flex max-w-72 flex-col break-normal text-center lg:gap-2 lg:text-left xl:max-w-md">
+          <div className="prose prose-sm flex max-w-72  flex-col gap-4 break-normal text-center lg:gap-6 lg:text-left xl:max-w-md">
             <h2 className="text-wrap text-xl font-bold text-theme-text md:text-2xl lg:text-3xl xl:text-4xl">
               Hi! I'm <span className="font-bold text-theme-mauve">Arthur</span>
             </h2>

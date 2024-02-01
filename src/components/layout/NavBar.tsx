@@ -97,7 +97,7 @@ const NavBar = ({}: Props) => {
       </motion.nav>
       {/* Small Screens */}
       <motion.nav
-        className="fixed bottom-0 right-0 z-40 mt-auto flex-col items-center gap-y-4 font-raleway lg:hidden"
+        className="fixed bottom-4 right-4 z-40 mt-auto flex-col items-center gap-y-4 font-raleway lg:hidden"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{
@@ -119,7 +119,7 @@ const NavBar = ({}: Props) => {
                   <div
                     onClick={() => handleMobileClick(name, hash)}
                     className={cn(
-                      "duration-800 flex h-16 w-16 items-center justify-center rounded-full border-4 border-theme-lavender bg-theme-base text-4xl text-theme-text shadow-md outline-none transition-all hover:text-theme-lavender ",
+                      "duration-800 flex h-12 w-12 items-center justify-center rounded-full border-4 border-theme-lavender bg-theme-base text-3xl text-theme-text shadow-md outline-none transition-all hover:text-theme-lavender ",
                       {
                         flex: activeSection === name,
                         "text-md h-9 w-9 border-none bg-transparent text-theme-text/20 shadow-none":
