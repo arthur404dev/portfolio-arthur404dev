@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`!scroll-smooth ${jetbrainsMono.variable} ${poppins.variable} ${raleway.variable} theme-latte bg-gradient-to-b from-theme-base via-theme-mantle to-theme-crust text-theme-text dark:theme-mocha`}
+        className={`!scroll-smooth ${jetbrainsMono.variable} ${poppins.variable} ${raleway.variable} theme-latte bg-gradient-to-b from-theme-base via-theme-mantle to-theme-crust text-theme-text dark:theme-mocha overflow-x-hidden`}
       >
         <ThemeProvider
           attribute="class"
