@@ -11,7 +11,7 @@ const Hero = ({}: Props) => {
   const { push } = useRouter();
   const { setActiveSection } = useActiveSection();
   const homeRef = useRef(null);
-  const isInView = useInView(homeRef, { amount: "some" });
+  const isInView = useInView(homeRef, { amount: "some", margin: "-20%" });
 
   useEffect(() => {
     if (isInView) setActiveSection("Home");
@@ -19,7 +19,7 @@ const Hero = ({}: Props) => {
 
   return (
     <section id="home" ref={homeRef} className=" scroll-mt-[100rem]">
-      <div className="relative mt-20 flex w-screen flex-col items-center justify-center pt-2 font-raleway sm:mt-24 md:mt-32 lg:mt-80 lg:max-w-7xl lg:flex-row lg:px-12 lg:pt-0 xl:px-0">
+      <div className="relative mt-32 flex w-screen flex-col items-center justify-center gap-8 pt-2 font-raleway sm:mt-24 md:mt-32 lg:mt-80 lg:max-w-7xl lg:flex-row lg:px-12 lg:pt-0 xl:px-0">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -46,7 +46,7 @@ const Hero = ({}: Props) => {
             ease: "easeInOut",
             duration: 1.5,
           }}
-          className="container flex flex-col items-center justify-center gap-4 py-4 lg:gap-12 xl:gap-14"
+          className="container flex flex-col items-center justify-center gap-8 py-4 lg:gap-12 xl:gap-14"
         >
           <div className="prose prose-sm flex max-w-72 flex-col break-normal text-center lg:gap-2 lg:text-left xl:max-w-md">
             <h2 className="text-wrap text-xl font-bold text-theme-text md:text-2xl lg:text-3xl xl:text-4xl">
@@ -69,7 +69,7 @@ const Hero = ({}: Props) => {
             >
               <span>Contact Me!</span>
             </button>
-            <button className="text-md flex h-10 items-center gap-2 rounded-md border border-theme-text px-3 text-theme-text hover:bg-theme-text hover:text-theme-base lg:h-12 lg:text-xl xl:h-14 xl:px-8">
+            <button className="text-md flex h-10 items-center gap-2 rounded-md bg-theme-crust px-3 text-theme-text hover:bg-theme-text hover:text-theme-base lg:h-12 lg:text-xl xl:h-14 xl:px-8">
               <span className="xl:hidden">Resumée</span>
               <span className="hidden xl:inline-block">Curriculum Vitae</span>
             </button>

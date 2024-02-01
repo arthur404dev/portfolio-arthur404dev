@@ -2,7 +2,8 @@
 import { cn } from "@/lib/utils";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useState } from "react";
-import { TfiMouse } from "react-icons/tfi";
+import { CgScrollV } from "react-icons/cg";
+
 type Props = {};
 
 const Divider = ({}: Props) => {
@@ -16,7 +17,7 @@ const Divider = ({}: Props) => {
     <div className="relative my-12 sm:my-14 md:my-16 lg:my-24">
       <motion.div
         className={cn(
-          "h-16 w-1 rounded-full bg-theme-surface2 ease-in-out dark:bg-theme-surface0",
+          "hidden h-16 w-1 rounded-full bg-theme-surface2 ease-in-out dark:bg-theme-surface0 md:block",
           { "animate-bounce": !scrolled },
         )}
         initial={{ opacity: 0, y: -100 }}
@@ -29,7 +30,7 @@ const Divider = ({}: Props) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 5 }}
           >
-            <TfiMouse className="h-8 w-8 text-theme-surface2 dark:text-theme-surface0" />
+            <CgScrollV className="h-8 w-8 text-theme-surface2 dark:text-theme-surface0" />
           </motion.div>
         )}
       </motion.div>

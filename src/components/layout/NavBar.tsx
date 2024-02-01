@@ -27,7 +27,7 @@ const NavBar = ({}: Props) => {
         duration: 0.5,
       }}
     >
-      <div className="shadow-xs flex h-[80px] w-full items-center justify-between gap-x-4 gap-y-10 bg-gradient-to-b from-theme-text/5 to-theme-crust/5 px-4 py-8 text-2xl shadow-theme-crust backdrop-blur-md md:px-40 lg:h-max lg:flex-col lg:justify-center lg:rounded-full lg:px-0 lg:text-xl">
+      <div className="flex h-[20px] w-full items-center justify-between gap-x-4 gap-y-10 bg-gradient-to-b from-theme-text/5 to-theme-crust/5 px-4 py-8 text-2xl shadow-sm shadow-theme-crust backdrop-blur-sm md:px-40 lg:h-max lg:flex-col lg:justify-center lg:rounded-full lg:px-0 lg:text-xl">
         {navigation.map(({ name, hash, icon }) => (
           <Link
             key={hash}
