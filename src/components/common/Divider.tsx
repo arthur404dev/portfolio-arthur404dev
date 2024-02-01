@@ -13,7 +13,7 @@ const Divider = ({}: Props) => {
   });
 
   return (
-    <div className="relative my-24">
+    <div className="relative my-12 sm:my-14 md:my-16 lg:my-24">
       <motion.div
         className={cn(
           "h-16 w-1 rounded-full bg-theme-surface2 ease-in-out dark:bg-theme-surface0",
