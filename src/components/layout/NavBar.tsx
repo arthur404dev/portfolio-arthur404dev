@@ -16,7 +16,6 @@ const NavBar = ({}: Props) => {
   const { activeSection, setActiveSection } = useActiveSection();
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
-  console.log(hovered);
 
   return (
     <motion.nav

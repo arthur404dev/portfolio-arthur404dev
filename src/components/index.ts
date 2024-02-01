@@ -1,4 +1,9 @@
+export { default as Divider } from "./common/Divider";
 export { default as Header } from "./layout/Header";
 export { default as NavBar } from "./layout/NavBar";
 export { default as ThemeProvider } from "./layout/ThemeProvider";
+export { default as About } from "./sections/About";
+export { default as Contact } from "./sections/Contact";
+export { default as Experience } from "./sections/Experience";
 export { default as Hero } from "./sections/Hero";
+export { default as Projects } from "./sections/Projects";

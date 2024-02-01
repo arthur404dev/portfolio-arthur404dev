@@ -19,7 +19,7 @@ const Hero = ({}: Props) => {
 
   return (
     <section id="home" ref={homeRef} className=" scroll-mt-[100rem]">
-      <div className="relative flex w-screen flex-col items-center justify-center pt-2 font-raleway lg:max-w-7xl lg:flex-row lg:px-12 lg:pt-0 xl:px-0">
+      <div className="relative mt-20 flex w-screen flex-col items-center justify-center pt-2 font-raleway sm:mt-24 md:mt-32 lg:mt-80 lg:max-w-7xl lg:flex-row lg:px-12 lg:pt-0 xl:px-0">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
